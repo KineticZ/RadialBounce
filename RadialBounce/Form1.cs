@@ -31,10 +31,10 @@ namespace RadialBounce
 
             for (int i = 0; i < balls.Length; i++)
             {
-                balls[i] = new Ball(x: random.Next(0, Canvas.Width), y: random.Next(0, Canvas.Height), speed: 3f, diameter: 10, color: Color.DarkGoldenrod);
+                balls[i] = new Ball(x: random.Next(0, Canvas.Width), y: random.Next(0, Canvas.Height), speed: 5f, diameter: 10, color: Color.DarkGoldenrod);
             }
             
-            innerBall = new Ball(x: Canvas.Width - 200, y: Canvas.Height - 200, speed: 0.5f, diameter: 270, color: Color.LightSeaGreen);
+            innerBall = new Ball(x: Canvas.Width - 200, y: Canvas.Height - 200, speed: 0.5f, diameter: 280, color: Color.LightSeaGreen);
             outerBall = new Ball(x: innerBall.Location.X, y: innerBall.Location.Y, speed: 0.5f, diameter: 300, color: Color.PaleVioletRed);
 
             Canvas.BackColor = Color.CornflowerBlue;
@@ -72,6 +72,14 @@ namespace RadialBounce
             foreach (var ball in balls)
             {
                 ball.Draw(graphics);
+            }
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.W)
+            {
+                Text = "W";
             }
         }
     }

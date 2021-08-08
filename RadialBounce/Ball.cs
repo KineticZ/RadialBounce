@@ -74,12 +74,14 @@ namespace RadialBounce
         }
         private void KeepOutOfSquareBoundary(Rectangle boundary)
         {
+            Random random = new Random();       
+
             int radius = diameter / 2;
             if (x - radius + diameter >= boundary.Width)
-            {
+            {              
                 Speed.X = Math.Abs(Speed.X);
             }
-            else if (x - radius <= boundary.X)
+            if (x - radius <= boundary.X)
             {
                 Speed.X = -Math.Abs(Speed.X);
             }
@@ -88,7 +90,7 @@ namespace RadialBounce
             {
                 Speed.Y = Math.Abs(Speed.Y);
             }
-            else if (y - radius <= boundary.Y)
+            if (y - radius <= boundary.Y)
             {
                 Speed.Y = -Math.Abs(Speed.Y);
             }
@@ -101,7 +103,7 @@ namespace RadialBounce
             {
                 Speed.X = -Math.Abs(Speed.X);
             }
-            else if (x - radius <= boundary.X)
+            if (x - radius <= boundary.X)
             {
                 Speed.X = Math.Abs(Speed.X);
             }
@@ -110,7 +112,7 @@ namespace RadialBounce
             {
                 Speed.Y = -Math.Abs(Speed.Y);
             }
-            else if(y - radius <= boundary.Y)
+            if(y - radius <= boundary.Y)
             {
                 Speed.Y = Math.Abs(Speed.Y);
             }
